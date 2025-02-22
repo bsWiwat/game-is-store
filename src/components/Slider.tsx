@@ -7,25 +7,25 @@ import { useEffect, useState } from "react";
 const slides = [
   {
     id: 1,
-    title: "Summer Sale Collections",
+    title: "Spacial Offer",
     description: "Sale! Up to 50% off!",
-    img: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://m.media-amazon.com/images/M/MV5BZmQwMjQ2ZTUtZmM5MC00MTdkLWIxYzgtODU1NzQ4Zjg4NmMxXkEyXkFqcGc@._V1_.jpg",
     url: "/",
     bg: "bg-gradient-to-r from-yellow-50 to-pink-50",
   },
   {
     id: 2,
-    title: "Winter Sale Collections",
+    title: "Spacial Offer",
     description: "Sale! Up to 50% off!",
-    img: "https://images.pexels.com/photos/1021693/pexels-photo-1021693.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://m.media-amazon.com/images/M/MV5BM2E3MWQyMzItZWFjNC00Y2E2LWI2ZjEtNDI2ZDU5YmU4ZTkwXkEyXkFqcGc@._V1_.jpg",
     url: "/",
     bg: "bg-gradient-to-r from-pink-50 to-blue-50",
   },
   {
     id: 3,
-    title: "Spring Sale Collections",
+    title: "Spacial Offer",
     description: "Sale! Up to 50% off!",
-    img: "https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=800",
+    img: "https://m.media-amazon.com/images/M/MV5BNDliNDJhNzAtM2UyZS00NTgyLTg5NzYtM2FhNjBmYTBkOGQ4XkEyXkFqcGc@._V1_.jpg",
     url: "/",
     bg: "bg-gradient-to-r from-blue-50 to-yellow-50",
   },
@@ -84,14 +84,14 @@ const Slider = () => {
         <div className="absolute m-auto left-1/2 bottom-8 flex gap-4">
           {slides.map((slide, index) => (
             <div
-              className={`w-3 h-3 rounded-full ring-1 ring-gray-600 cursor-pointer flex items-center justify-center ${
+              className={`w-3 h-3 rounded-full ring-1 ring-[#d99f2b] cursor-pointer flex items-center justify-center ${
                 current === index ? "scale-150" : ""
               }`}
               key={slide.id}
               onClick={() => setCurrent(index)}
             >
               {current === index && (
-                <div className="w-[6px] h-[6px] bg-gray-600 rounded-full"></div>
+                <div className="w-[6px] h-[6px] bg-[#d99f2b] rounded-full"></div>
               )}
             </div>
           ))}
@@ -102,4 +102,11 @@ const Slider = () => {
 };
 
 export default Slider;
+
+
+
+
+
+
+
 
