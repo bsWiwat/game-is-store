@@ -1,0 +1,51 @@
+[
+  {
+    "id": 6638,
+    "name": "Genshin Impact",
+    "image": "/Card_Genshin.png",
+    "price": 953.23,
+    "currency": "฿"
+  },
+  {
+    "id": 2760,
+    "name": "Valorant",
+    "image": "/Card_valorant.png",
+    "price": 799.99,
+    "currency": "฿"
+  },
+  {
+    "id": 1201,
+    "name": "Elden Ring",
+    "image": "/Card_Elden.jpg",
+    "price": 1299.0,
+    "currency": "฿"
+  },
+  {
+    "id": 6327,
+    "name": "Cookie Run Kingdoms",
+    "image": "/Card_Cookie.png",
+    "price": 1036.8,
+    "currency": "฿"
+  },
+  {
+    "id": 5791,
+    "name": "Honkail Star Rail",
+    "image": "/Card_Honkai.png",
+    "price": 1399.68,
+    "currency": "฿"
+  },
+  {
+    "id": 2716,
+    "name": "Marvel Rivals",
+    "image": "/Card_Marvel.png",
+    "price": 1056.24,
+    "currency": "฿"
+  },
+  {
+    "id": 5075,
+    "name": "Polemon TCG",
+    "image": "/Card_Pokemon.jpg",
+    "price": 2572.2,
+    "currency": "฿"
+  }
+]
