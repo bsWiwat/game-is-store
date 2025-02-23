@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface Product {
-  id: number;
+  id: number; //แก้เป็น String
   name: string;
   image: string;
   price: number;
