@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import CategoryList from "@/components/CategoryList";
 import ProductList from "@/components/ProductList";
 import Slider from "@/components/Slider";
-import Filter from "@/components/Filter";
-import Image from "next/image";
 
 interface Product {
   id: number;
@@ -13,50 +11,56 @@ interface Product {
   price: number;
   currency: string;
 }
-
-const ListPage = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-
+const HomePage = () => {
+  const [products, setProducts] = useState<Product[]>([]); // กำหนดชนิดของ products เป็น array ของ Product
   useEffect(() => {
     const fetchProducts = async () => {
       const res = await fetch("/data/products.json");
-      const data: Product[] = await res.json();
+      const data: Product[] = await res.json(); // กำหนดให้ data เป็นประเภท Product[]
       setProducts(data);
     };
     fetchProducts();
   }, []);
-
   return (
     <>
-      <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
-        {/* Banner Slider */}
+      <div className="">
+        {/* Baner Silder*/}
         <Slider />
-        
-        {/* Campaign Section */}
-        <div className="hidden bg-[#e2d2b2] px-4 sm:flex justify-between h-64">
-          <div className="w-2/3 flex flex-col items-center justify-center gap-8">
-            <h1 className="text-4xl font-semibold leading-[48px] text-gray-700">
-              Grab up to 50% off on
-              <br /> Selected Products
-            </h1>
-            <button className="rounded-3xl bg-[#EA3737] text-white w-max py-3 px-5 text-sm">
-              Buy Now
+
+        {/*Categorylist*/}
+        <div className="mt-10">
+          <CategoryList />
+        </div>
+
+        {/*Recoment Product Card list*/}
+        <div className="mt-16 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-32 ">
+          <div className="flex flex-row justify-between">
+            <h1 className="text-2xl mb-6 font-bold">Recommend</h1>
+            <button className="text-sm md:text-lg text-white bg-[#D99F2B] px-10 h-9">
+              See all
             </button>
           </div>
-          <div className="relative w-1/3">
-            <Image src="/logo.png" alt="" fill className="object-contain" />
+
+          <div className="flex flex-wrap gap-10 justify-center mx-5 ">
+            {/* map ข้อมูลแต่ละ product และส่งไปยัง Card component */}
+            {products.slice(0, 4).map((product) => (
+              <ProductList key={product.id} product={product} />
+            ))}
           </div>
         </div>
-        
-        {/* Filter */}
-        <Filter />
-        
-        {/* Product Section */}
-        <h1 className="mt-12 text-xl font-semibold">For you!</h1>
-        <ProductList />
+
+        <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-32">
+          <h1 className="text-2xl font-bold mb-6">New Products</h1>
+          <div className="flex flex-wrap gap-10 justify-center mx-5">
+            {/* map ข้อมูลแต่ละ product และส่งไปยัง Card component */}
+            {products.slice(0, 4).map((product) => (
+              <ProductList key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
 };
 
-export default ListPage;
+export default HomePage;
