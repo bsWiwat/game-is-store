@@ -7,3 +7,11 @@ export interface Product {
   description: string;
   gallery: string[];
 }
+
+export interface CardProps {
+  product: Product;
+}
+
+export interface ProductImagesProps {
+  gallery: string[];
+}

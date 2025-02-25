@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "@/models/Product";
-
-interface CardProps {
-  product: Product;
-}
+import { CardProps } from "@/models/Product";
 
 const ProductList: React.FC<CardProps> = ({ product }) => {
   return (

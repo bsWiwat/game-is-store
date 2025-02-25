@@ -2,10 +2,11 @@
   {
     "id": "id-6638",
     "name": "Genshin Impact",
-    "image": "/Card_Genshin.png",
+    "image": "/Card/Card_Genshin.png",
     "price": 953.23,
     "currency": "฿",
-    "description": "รายละเอียดไอดีเกม",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius possimus temporibus sit, odit officiis debitis molestias, in dolor saepe aliquid similique vero quo! Aliquid tenetur voluptatum officia iure qui. Sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti distinctio nihil iure deleniti doloremque soluta, sed consequatur beatae odio consequuntur perspiciatis cum ducimus labore. Deleniti similique amet veniam perferendis ducimus?",
+
     "gallery": [
       "/ID_img/ID_genshin1.jpg",
       "/ID_img/ID_genshin2.jpg",
@@ -16,7 +17,7 @@
   {
     "id": "id-2760",
     "name": "Valorant",
-    "image": "/Card_valorant.png",
+    "image": "/Card/Card_valorant.png",
     "price": 799.99,
     "currency": "฿",
     "description": "รายละเอียดไอดีเกม",
@@ -31,7 +32,7 @@
   {
     "id": "id-1201",
     "name": "Elden Ring",
-    "image": "/Card_Elden.jpg",
+    "image": "/Card/Card_Elden.jpg",
     "price": 1299.0,
     "currency": "฿",
     "description": "รายละเอียดไอดีเกม",
@@ -46,7 +47,7 @@
   {
     "id": "id-6327",
     "name": "Cookie Run Kingdoms",
-    "image": "/Card_Cookie.png",
+    "image": "/Card/Card_Cookie.png",
     "price": 1036.8,
     "currency": "฿",
     "description": "รายละเอียดไอดีเกม",
@@ -61,7 +62,7 @@
   {
     "id": "id-5791",
     "name": "Honkail Star Rail",
-    "image": "/Card_Honkai.png",
+    "image": "/Card/Card_Honkai.png",
     "price": 1399.68,
     "currency": "฿",
     "description": "รายละเอียดไอดีเกม",
@@ -76,7 +77,7 @@
   {
     "id": "id-2716",
     "name": "Marvel Rivals",
-    "image": "/Card_Marvel.png",
+    "image": "/Card/Card_Marvel.png",
     "price": 1056.24,
     "currency": "฿"
   },

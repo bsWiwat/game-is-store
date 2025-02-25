@@ -2,7 +2,6 @@
 
 import { useParams } from "next/navigation";
 import ProductImages from "@/components/ProductImages";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import ProductList from "@/components/ProductList";
 import { Product } from "@/models/Product";
@@ -14,7 +13,7 @@ export default function ProductDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("/data/products.json"); // โหลด JSON
+      const response = await fetch("/data/products.json");
       const data: Product[] = await response.json();
       console.log(data);
       const foundProduct = data.find((p) => p.id === String(id));
@@ -28,34 +27,43 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="container mx-auto p-8 bg-[#F2F4F6]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white p-8">
+    <>
+      <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 flex flex-col lg:flex-row gap-16 mt-12">
         {/* รูปสินค้า */}
-        <div className="w-full">
-          <ProductImages gallery={product.gallery} />
+        <div className="w-full lg:w-1/2 lg:sticky top-20 h-max ">
+          <ProductImages gallery={product.gallery || []} />
         </div>
 
-        {/* รายละเอียดสินค้า */}
-        <div className="flex flex-col justify-between">
-          <div>
-            <h1 className="text-4xl font-bold">{product.name}</h1>
-            <p className="text-2xl font-bold text-[#D99F2B] mt-4">
-              {product.currency} {product.price}
+        {/* ข้อมูลสินค้า */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-between">
+          <div className="flex flex-col gap-8">
+            <h1 className="text-4xl font-bold">GAME-{product.id}</h1>
+            <p className="text-sm">{product.description}</p>
+            <div className="h-[2px] bg-gray-200" />
+            <p className="text-lg text-[#D99F2B]">
+              Price: {product.currency} {product.price}
             </p>
-            <p className="text-gray-600 mt-2">{product.description}</p>
           </div>
-
-          {/* ปุ่ม  Buy Add to cart */}
-          <div>
-            <button className="bg-[#D99F2B] text-white px-14 py-3  mt-4 self-start mr-8 ">
-              Buy Now
+          <div className="flex justify-between items-center w-1/2 mt-8 gap-4">
+            <button className="rounded-md bg-[#D99F2B] text-white py-3 px-4 w-">
+              Buy now
             </button>
-            <button className="bg-[#373435] text-white px-14 py-3  mt-4 ">
+            <button className="rounded-md bg-black text-white py-3 px-4">
               Add to Cart
             </button>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Related Products */}
+      <div className="mt-24 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-32">
+        <h1 className="text-2xl px-12 font-bold mb-6">Related Products</h1>
+        <div className="flex flex-wrap gap-10 justify-start mx-5">
+          {product
+            ? [product].map((p) => <ProductList key={p.id} product={p} />)
+            : null}
+        </div>
+      </div>
+    </>
   );
 }
