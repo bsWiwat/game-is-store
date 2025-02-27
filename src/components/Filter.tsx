@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { Product } from "@/models/Product";
-
-interface FilterProps {
-  products: Product[];
-  setFilteredProducts: (products: Product[]) => void;
-}
+import { FilterProps } from "@/models/Product";
 
 const Filter = ({ products, setFilteredProducts }: FilterProps) => {
   const [filters, setFilters] = useState({

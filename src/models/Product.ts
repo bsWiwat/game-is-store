@@ -16,3 +16,8 @@ export interface CardProps {
 export interface ProductImagesProps {
   gallery: string[];
 }
+
+export interface FilterProps {
+  products: Product[];
+  setFilteredProducts: (products: Product[]) => void;
+}
